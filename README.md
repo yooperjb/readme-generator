@@ -1,6 +1,8 @@
 
   # README-generator
 
+  ![README-generator](https://img.shields.io/github/languages/top/yooperjb/readme-generator) ![MIT](https://img.shields.io/badge/license-MIT-blue)
+
   ## Description 
   This README Generator creates a quality readme file using user input and formating the readme file using the answers provided.
 
@@ -20,6 +22,8 @@
   If you have interst in contributing to this project please contact me on github.
 
   ## License
-  MIT License
+  
+  This project is licensed under the [MIT](https://choosealicense.com/licenses/mit/) license. Click the link for more information about the license.
+  
 
   
