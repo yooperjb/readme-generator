@@ -1,18 +1,123 @@
+// import modules
+const { rejects } = require('assert');
+const fs = require('fs');
+const inquirer = require("inquirer");
+const generateMarkdown = require("./utils/generateMarkdown.js");
+
 // array of questions for user
-const userQuestions = [userName, email, title, description, installation, usage, license, contributing, test, questions];
+const userQuestions = () => {
+    return inquirer
+    .prompt([
+        {
+        type: 'input',
+        name: 'userName',
+        message: 'What is your github user name (Required)',
+        validate: nameInput => {
+            if (nameInput) {
+                return true;
+            } else {
+                console.log("Please enter your GitHub user name!");
+                return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: "Please enter your email (Required)",
+            validate: emailInput => {
+                if (emailInput){
+                    return true;
+                } else {
+                    console.log('Please enter your email address!');
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'title',
+            message: 'Enter the project Title (Required)',
+            validate: titleInput => {
+               if (titleInput) {
+                   return true;
+               } else {
+                   console.log('Please enter the project title');
+                   return false;
+               }
+            }
+        },
+        {
+            type: 'input',
+            name: 'description',
+            message: 'Enter the project description (Required)',
+            validate: descriptionInput => {
+                if (descriptionInput) {
+                    return true;
+                } else {
+                    console.log('Please enter the project description');
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'installation',
+            message: 'Enter information regarding project installation',
+        },
+        {
+            type: 'input',
+            name: 'usage',
+            message: 'Enter information regarding project usage',
+        },
+        {
+            type: 'checkbox',
+            name: 'license',
+            message: 'Which license does the project use? Choose one.',
+            choices: ['MIT', ]
+        },
+        {
+            type: 'input',
+            name: 'contributing',
+            message: 'Enter contribution information.'
+        },
+        {
+            type: 'input',
+            name: 'test',
+            message: 'Enter any information regarding project tests.',
+        },
+    ])
+};
+
 
 // function to write README file
-function writeToFile(fileName, data) {
-
-}
+//function writeToFile(fileName, data) {
+function writeToFile(data) {
+    fs.writeFile('README.md', data, err => {
+        // if error log error
+        if (err) {
+            console.log(err);
+            return;
+        }
+        console.log("File Written!");  
+    })
+};
 
 // function to initialize program
 function init() {
-    
+
 }
 
 // function call to initialize program
-init();
+//init();
+userQuestions()
+    .then(projectData => {
+        return generateMarkdown(mockData);
+    })
+    .then(markDownData => {
+        console.log("MarkDown: ",markDownData);
+        return writeToFile(markDownData);
+    });
 
 mockData = {
     userName: 'yooperjb',
