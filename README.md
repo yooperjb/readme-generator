@@ -30,8 +30,8 @@
   ## Contributing
   There are many ways to contribute to this project if you are interested. 
 
-  * [Submit bugs and feature requests]('https://github.com/yooperjb/readme-generator/issues')
-  * Review [source code changes]('https://github.com/yooperjb/readme-generator/pulls')
+  * [Submit bugs and feature requests](https://github.com/yooperjb/readme-generator/issues)
+  * Review [source code changes](https://github.com/yooperjb/readme-generator/pulls)
 
   ## License
   This project is licensed under the [MIT](https://choosealicense.com/licenses/mit/) license. Click the link for more information about the license.
