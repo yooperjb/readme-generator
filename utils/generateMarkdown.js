@@ -1,14 +1,14 @@
 // function to generate markdown for README
 function generateMarkdown(data) {
-  console.log("Data made it!:",data);
-  const {userName,repoName,email,title,description,installation,usage,license,test} = data;
   
+  const {userName,repoName,email,title,description,installation,usage,license,test} = data;
+
   return `
   # ${title}
 
-  ![${title}](https://img.shields.io/github/languages/top/${userName}/${repoName}) ![${license}](https://img.shields.io/badge/license-${license}-blue)
+  ![${title}](https://img.shields.io/github/languages/top/${userName}/${repoName}) ![${license.text}](https://img.shields.io/badge/license-${license.text}-blue)
 
-  ## Description 
+  ## Description
   ${description}
 
   ## Table of Contents
@@ -32,7 +32,7 @@ function generateMarkdown(data) {
   * Review [source code changes]('https://github.com/${userName}/${repoName}/pulls')
 
   ## License
-  ${generateLicense(license)}
+  This project is licensed under the [${license.text}](${license.url}) license. Click the link for more information about the license.
 
   ## Tests
   ${test}
@@ -43,26 +43,26 @@ function generateMarkdown(data) {
   `;
 }
 
-// generate license information based on license choice
-const generateLicense = (license) => {
-  let option = licenses.find(option => option.name === license);
-  return `
-  This project is licensed under the [${option.name}](${option.url}) license. Click the link for more information about the license.
-  `
-};
+// // generate license information based on license choice
+// const generateLicense = (license) => {
+//   let option = licenses.find(option => option.name === license);
+//   return `
+//   This project is licensed under the [${option.name}](${option.url}) license. Click the link for more information about the license.
+//   `
+// };
 
-// license options with url
-const licenses = [
-    {name: 'MIT',
-    url: 'https://choosealicense.com/licenses/mit/'},
-    {name:'GNU GPLv3',
-    url:'https://choosealicense.com/licenses/gpl-3.0/'},
-    {name:'Apache 2',
-    url:'https://choosealicense.com/licenses/apache-2.0/'},
-    {name:'Unlicense',
-    url:'https://choosealicense.com/licenses/unlicense/'},
-    {name:'None',
-    url:'https://choosealicense.com/no-permission/'}
-  ]; 
+// // license options with url
+// const licenses = [
+//     {name: 'MIT',
+//     url: 'https://choosealicense.com/licenses/mit/'},
+//     {name:'GNU GPLv3',
+//     url:'https://choosealicense.com/licenses/gpl-3.0/'},
+//     {name:'Apache 2',
+//     url:'https://choosealicense.com/licenses/apache-2.0/'},
+//     {name:'Unlicense',
+//     url:'https://choosealicense.com/licenses/unlicense/'},
+//     {name:'None',
+//     url:'https://choosealicense.com/no-permission/'}
+//   ]; 
   
 module.exports = generateMarkdown;
