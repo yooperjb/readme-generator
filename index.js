@@ -1,5 +1,5 @@
 // import modules
-const { rejects } = require('assert');
+//const { rejects } = require('assert');
 const fs = require('fs');
 const inquirer = require("inquirer");
 const generateMarkdown = require("./utils/generateMarkdown.js");
@@ -144,19 +144,6 @@ const userQuestions = () => {
         },
         {
             type: 'input',
-            name: 'contributing',
-            message: 'Enter contribution information.',
-            validate: contribInput => {
-                if (contribInput) {
-                    return true;
-                } else {
-                    console.log('Please enter project contribution info.');
-                    return false;
-                }
-            }
-        },
-        {
-            type: 'input',
             name: 'test',
             message: 'Enter any information regarding project tests.',
             validate: testInput => {
@@ -197,8 +184,8 @@ mockData = {
     userName: 'yooperjb',
     repoName: 'readme-generator',
     email: 'jason.barnes@humboldt.edu',
-    title: 'README-generator',
-    description: 'This README Generator creates a quality readme file utilizing user input and formats the readme file using the answers provided. It creates a header for the title, description, table of contents, installation, usage, contribution, license, tests, and question sections. Badges are created for the top language used and license chosen for hte project. Links are created dynamically for the user GitHub page, email, project license, and bug and feature submissions for the project repo. <br />The application requires that all user input fields  ',
+    title: 'README Generator',
+    description: 'This README Generator creates a quality readme file utilizing user input and formats the readme file using the answers provided. It creates a header for the title, description, table of contents, installation, usage, contribution, license, tests, and question sections. Badges are created for the top language used and license chosen for hte project. Links are created dynamically for the user GitHub page, email, project license, and bug and feature submissions for the project repo. <br />The application uses validation to check for values and requires that all user input fields are provided information. ',
     installation: 'This project requires package dependencies to function. Clone the working files from the Github repo to begin. Because this project takes CLI input, Node.js must also be installed. It also uses the inquirer.js module for input questions which can be installed by using: <br /> npm i inquirer <br />',
     usage: 'To use the readme-generator, first install any dependencies then run the index.js file in node. A series of questions about the project will be asked and used to generate a beautifully styled and organized readme file.',
     license:{

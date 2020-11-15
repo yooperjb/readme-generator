@@ -1,11 +1,14 @@
 
-  # README-generator
+  # README Generator
 
-  ![README-generator](https://img.shields.io/github/languages/top/yooperjb/readme-generator) ![MIT](https://img.shields.io/badge/license-MIT-blue)
+  ![README Generator](https://img.shields.io/github/languages/top/yooperjb/readme-generator) ![MIT](https://img.shields.io/badge/license-MIT-blue)
 
   ## Description
-  This README Generator creates a quality readme file using user input and formating the readme file using the answers provided.
-
+  This README Generator creates a quality readme file utilizing user input and formats the readme file using the answers provided. It creates a header for the title, description, table of contents, installation, usage, contribution, license, tests, and question sections. Badges are created for the top language used and license chosen for hte project. Links are created dynamically for the user GitHub page, email, project license, and bug and feature submissions for the project repo. <br />The application uses validation to check for values and requires that all user input fields are provided information.
+  
+  ***
+  ![Project GIF](./assets/images/README_Generator.gif)
+  ***
   ## Table of Contents
   * [Installation](#installation)
   * [Usage](#usage)
@@ -15,10 +18,10 @@
   * [Questions](#questions)
     
   ## Installation
-  This project requires a few dependencies to function. Clone the working files from the Github repo to begin. Because this project takes CLI input, Node.js must also be installed. It also uses the inquirer.js module for input questions which can be installed using <br /> npm i inquirer <br />
+  This project requires package dependencies to function. Clone the working files from the Github repo to begin. Because this project takes CLI input, Node.js must also be installed. It also uses the inquirer.js module for input questions which can be installed by using: <br /> npm i inquirer <br />
     
   ## Usage
-  To use the readme-generator, run the index.js file in node. A series of questions about the project will be asked and used to generate a styled readme file.
+  To use the readme-generator, first install any dependencies then run the index.js file in node. A series of questions about the project will be asked and used to generate a beautifully styled and organized readme file.
 
   ## Contributing
   There are many ways to contribute to this project if you are interested. 
